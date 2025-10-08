@@ -32,8 +32,10 @@
             alarm_automation_settings_button = new Button();
             alarm_zone_picture_box = new PictureBox();
             alarm_logging_box = new TextBox();
-            scan_image = new ScanImage(alarm_zone_picture_box);
+            scan_image = new ScanImage(alarm_zone_picture_box, alarm_automation_button);
 
+            FormBorderStyle = FormBorderStyle.FixedSingle; // 添加此行，设置为固定边框
+            MaximizeBox = false; // 添加此行，禁止最大化
             ((System.ComponentModel.ISupportInitialize)alarm_zone_picture_box).BeginInit();
             SuspendLayout();
             // 
@@ -43,9 +45,10 @@
             alarm_automation_button.Name = "alarm_automation_button";
             alarm_automation_button.Size = new Size(94, 37);
             alarm_automation_button.TabIndex = 0;
-            alarm_automation_button.Text = "EVE Alarm";
+            alarm_automation_button.Text = "Start";
+            alarm_automation_button.ForeColor = Color.Green;
             alarm_automation_button.UseVisualStyleBackColor = true;
-            alarm_automation_button.Click += scan_image.SaveScreenButtonClick;
+            alarm_automation_button.Click += scan_image.CaptureButtonClick;
             // 
             // Alarm Automation Settings Button
             // 
@@ -61,6 +64,7 @@
             alarm_zone_picture_box.Location = new Point(215, 12);
             alarm_zone_picture_box.Name = "alarm_zone_picture_box";
             alarm_zone_picture_box.Size = new Size(113, 344);
+            alarm_zone_picture_box.SizeMode = PictureBoxSizeMode.StretchImage;
             alarm_zone_picture_box.TabIndex = 2;
             alarm_zone_picture_box.TabStop = false;
             // 
