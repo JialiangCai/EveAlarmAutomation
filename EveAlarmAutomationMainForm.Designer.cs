@@ -32,6 +32,8 @@
             alarm_automation_settings_button = new Button();
             alarm_zone_picture_box = new PictureBox();
             alarm_logging_box = new TextBox();
+            scan_image = new ScanImage(alarm_zone_picture_box);
+
             ((System.ComponentModel.ISupportInitialize)alarm_zone_picture_box).BeginInit();
             SuspendLayout();
             // 
@@ -41,8 +43,9 @@
             alarm_automation_button.Name = "alarm_automation_button";
             alarm_automation_button.Size = new Size(94, 37);
             alarm_automation_button.TabIndex = 0;
-            alarm_automation_button.Text = "EVE Alarm automation is disabled";
+            alarm_automation_button.Text = "EVE Alarm";
             alarm_automation_button.UseVisualStyleBackColor = true;
+            alarm_automation_button.Click += scan_image.SaveScreenButtonClick;
             // 
             // Alarm Automation Settings Button
             // 
@@ -69,7 +72,7 @@
             alarm_logging_box.Size = new Size(197, 426);
             alarm_logging_box.TabIndex = 3;
             // 
-            // EveAlarmAutomationMainForm
+            // EveAlarm Automation Main Form
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -89,7 +92,9 @@
 
         private Button alarm_automation_button;
         private Button alarm_automation_settings_button;
-        private PictureBox alarm_zone_picture_box;
         private TextBox alarm_logging_box;
+        private PictureBox alarm_zone_picture_box;
+
+        private ScanImage scan_image;
     }
 }
