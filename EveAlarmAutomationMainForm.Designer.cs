@@ -36,6 +36,7 @@
 
             FormBorderStyle = FormBorderStyle.FixedSingle; // 添加此行，设置为固定边框
             MaximizeBox = false; // 添加此行，禁止最大化
+            TopMost = true; // 保证窗口置顶
             ((System.ComponentModel.ISupportInitialize)alarm_zone_picture_box).BeginInit();
             SuspendLayout();
             // 
@@ -58,6 +59,7 @@
             alarm_automation_settings_button.TabIndex = 1;
             alarm_automation_settings_button.Text = "Settings";
             alarm_automation_settings_button.UseVisualStyleBackColor = true;
+            alarm_automation_settings_button.Click += scan_image.SetCaptureAreaButtonClick;
             // 
             // Alarm Zone Picture Box
             // 
